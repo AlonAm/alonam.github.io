@@ -1,2 +1,2 @@
 # cloudinator.github.io
-Cloudinator Website
+My personal blog: [alonam.com](http://alonam.com)
