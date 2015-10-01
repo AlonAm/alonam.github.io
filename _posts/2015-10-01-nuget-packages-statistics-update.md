@@ -2,8 +2,9 @@
 layout: post
 title: NuGet Packages Statistics Update
 category: blog
+tags: nuget
 ---
-The Nuget team informed me that they will be increasing the download counts of my NuGet package(s) this week. 
+The Nuget team informed me that they will be increasing the download counts of my NuGet packages this week. 
 
 Their old statistics warehouse contained download facts for non-normalized versions, whereas all of their services only take normalized versions into account. The normalized version standardizes the version formats in use and makes querying and comparing packages easier. Say a package has version 2.0.0.0, they normalize that version into 2.0.0 and work with that version number instead. The same goes for 2.0 which becomes 2.0.0, essentially considering 2.0.0.0 and 2.0 as the same version. Another example would be version 1.2.3.0115, which is normalized as 1.2.3.115.
 
