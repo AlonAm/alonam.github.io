@@ -22,8 +22,8 @@ Over the next few days, they will be making the following changes:
 - NLoad 0.3.14 - increase with 10 downloads
 - NLoad 0.3.17 - increase with 10 downloads
 - NLoad 0.3.19 - increase with 16 downloads
-- NLoad 0.3.1-alpha - increase with 10 downloads
-- NLoad 0.3.3-alpha - increase with 11 downloads
+- NLoad 0.3.1 - increase with 10 downloads
+- NLoad 0.3.3 - increase with 11 downloads
 - NLoad 0.3.7 - increase with 17 downloads
 - NAnt.Core 0.92.0 - increase with 53 downloads
 
