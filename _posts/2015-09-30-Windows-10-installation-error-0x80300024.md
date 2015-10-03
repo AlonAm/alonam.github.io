@@ -13,3 +13,4 @@ To fix it
 
 - Disconnect all drives from your PC except the one you are installing Windows on.
 - Enter your BIOS and set the hard drive you are installing Windows on to be the top-priority drive.
+
