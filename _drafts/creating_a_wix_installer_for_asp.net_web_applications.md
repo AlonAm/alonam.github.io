@@ -8,10 +8,12 @@ Manually maintaining a WiX installer for an ASP.NET web application is a very ti
 
 In this tutorial I'm going to show you how to use WiX Toolset and MSDeploy to automatically create a Windows Installer for ASP.NET web applications.
 
-First create a new setup project in Visual Studio
+### Step 1: Create a new setup project in Visual Studio
 
-File&rarr;New&rarr;Project...
+File &rarr; New &rarr; Project...
 
 ![alt text](/images/wix_aspnet_tutorial/new_wix_project.png)
 
-Then edit your .wixproj (I use an external editor)
+### Step 2: Add project reference to your web application
+
+### Step 3: Edit .wixproj file
