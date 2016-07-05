@@ -12,8 +12,10 @@ In this tutorial I'm going to show you how to use WiX Toolset and MSDeploy to au
 
 File &#10140; New &#10140; Project...
 
-![alt text](/images/wix_aspnet_tutorial/new_wix_project.png)
+![Create New WiX Project](/images/wix_aspnet_tutorial/new_wix_project.png)
 
 ### Step 2: Add project reference to your web application
+
+![Add Project Reference](/images/wix_aspnet_tutorial/add_project_reference.png)
 
 ### Step 3: Edit .wixproj file
