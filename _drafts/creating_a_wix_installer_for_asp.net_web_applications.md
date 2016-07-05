@@ -20,6 +20,6 @@ File &#10140; New &#10140; Project...
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_project_reference.png)
 
-### Step 3: Add new .wxs file
+### Step 3: Add a new .wxs file
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
