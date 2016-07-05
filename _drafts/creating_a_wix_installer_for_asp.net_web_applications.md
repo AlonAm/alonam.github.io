@@ -26,4 +26,5 @@ File &#10140; New &#10140; Project...
 
 ### Step 4: Edit .wixproj
 
-{% gist 3ee098fb588da1985da2 %}
+{% gist AlonAmsalem/3ee098fb588da1985da2 %}
+
