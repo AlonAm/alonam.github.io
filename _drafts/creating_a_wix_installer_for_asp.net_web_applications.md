@@ -16,6 +16,8 @@ File &#10140; New &#10140; Project...
 
 ### Step 2: Add project reference to your web application
 
+![Add Reference](/images/wix_aspnet_tutorial/add_reference.png)
+
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_project_reference.png)
 
 ### Step 3: Edit .wixproj file
