@@ -19,21 +19,21 @@ To add a new setup project in Visual Studio go to File &#10140; New &#10140; Pro
 
 ![Create New WiX Project](/images/wix_aspnet_tutorial/new_wix_project.png)
 
-### Step 2: Add a project reference to the web application
+### Step 2: Add project reference
 
 ![Add Reference](/images/wix_aspnet_tutorial/add_reference.png)
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_project_reference.png)
 
-### Step 3: Add a new Installer (.wxs) file
+### Step 3: Add a new Installer File (.wxs)
+
+The .wxs file name should be the same as the web application name. For example: [WebApp.wxs](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebApp.wxs)
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
 
-### Step 4: Web Deploy Package
+### Step 4: Package Web Application
 
-Open the WiX setup project file (.wixproj) using any text editor and paste the following XML snippet inside ```<Project></Project>``` XML tag.
-
-Here's a .wixproj file for example: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebAppInstaller.wixproj
+Open the WiX setup project file (.wixproj) using any text editor and paste the following XML snippet inside ```<Project></Project>``` tag.
 
 ```xml
 <Target Name="BeforeBuild">
@@ -45,3 +45,21 @@ Here's a .wixproj file for example: https://github.com/AlonAmsalem/WebAppWixInst
   <HeatDirectory OutputFile="%(ProjectReference.Filename).wxs" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="%(ProjectReference.Filename)" AutogenerateGuids="True" SuppressCom="True" SuppressFragments="True" SuppressRegistry="True" ToolPath="$(WixToolPath)"  Condition="'%(ProjectReference.WebProject)'=='True'" />
 </Target>
 ```
+
+Add ```<WebProject>True</WebProject>``` to the web application project reference
+
+```xml
+<ProjectReference Include="..\WebApp\WebApp.csproj">
+  <Name>WebApp</Name>
+  <Project>{55b02cdb-fdd6-411d-8524-2429bab38d3b}</Project>
+  <Private>True</Private>
+  <DoNotHarvest>True</DoNotHarvest>
+  <RefProjectOutputGroups>
+  </RefProjectOutputGroups>
+  <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+  <WebProject>True</WebProject>
+</ProjectReference>
+```
+
+Here's a .wixproj file for example  [WebAppInstaller.wixproj](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebAppInstaller.wixproj)
+
