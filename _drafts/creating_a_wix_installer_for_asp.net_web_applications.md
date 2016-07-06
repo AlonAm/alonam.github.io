@@ -12,23 +12,26 @@ Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
 ### Step 1: Add a new WiX setup project
 
-Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/)(This tutorial is based on version 3.10.3).
+Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/). This tutorial is based on version 3.10.3
 
-In Visual Studio, File &#10140; New &#10140; Project...
+To add a new setup project in Visual Studio go to File &#10140; New &#10140; Project...
 
 ![Create New WiX Project](/images/wix_aspnet_tutorial/new_wix_project.png)
 
-### Step 2: Add project reference to your web application
+### Step 2: Add a project reference to the web application
 
 ![Add Reference](/images/wix_aspnet_tutorial/add_reference.png)
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_project_reference.png)
 
-### Step 3: Add a new .wxs file
+### Step 3: Add a new Installer (.wxs) file
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
 
-### Step 4: Edit .wixproj
+### Step 4: Add a Before Build event to the WiX setup project
+
+Open the WiX setup project .wixproj file using a text editor and paste the following XML inside the <Project> XML tag.
+Here's a full Example: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebAppInstaller.wixproj
 
 {% gist AlonAmsalem/3ee098fb588da1985da2 %}
 
