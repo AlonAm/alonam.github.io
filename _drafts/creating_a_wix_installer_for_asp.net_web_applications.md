@@ -13,6 +13,7 @@ Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 ### Step 1: Add a new WiX setup project
 
 Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/).
+
 This tutorial is based on version 3.10.3
 
 To add a new setup project in Visual Studio go to File &#10140; New &#10140; Project...
@@ -29,24 +30,17 @@ To add a new setup project in Visual Studio go to File &#10140; New &#10140; Pro
 
 The .wxs file name should be the same as the web application name. For example: [WebApp.wxs](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebApp.wxs)
 
-![Add Project Reference](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
+![Add Installer File](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
+
+### Step 4: Add Transforms File
+
+Add image here...
 
 ### Step 4: Package Web Application
 
-Open the WiX setup project file (.wixproj) using any text editor and paste the following XML snippet inside ```<Project></Project>``` tag.
+Open the WiX setup project file (.wixproj) using any text editor.
 
-```xml
-<Target Name="BeforeBuild">
-  <Exec Command="attrib -R %(ProjectReference.Filename).wxs" Condition="'%(ProjectReference.WebProject)'=='True'" />
-  <MSBuild Projects="%(ProjectReference.FullPath)" Targets="Package" Properties="Configuration=$(Configuration);Platform=AnyCPU" Condition="'%(ProjectReference.WebProject)'=='True'" />
-  <ItemGroup>
-    <LinkerBindInputPaths Include="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" />
-  </ItemGroup>
-  <HeatDirectory OutputFile="%(ProjectReference.Filename).wxs" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="%(ProjectReference.Filename)" AutogenerateGuids="True" SuppressCom="True" SuppressFragments="True" SuppressRegistry="True" ToolPath="$(WixToolPath)"  Condition="'%(ProjectReference.WebProject)'=='True'" />
-</Target>
-```
-
-Add ```<WebProject>True</WebProject>``` to the web application project reference
+Add ```<WebProject>True</WebProject>``` to the web application project reference.
 
 ```xml
 <ProjectReference Include="..\WebApp\WebApp.csproj">
@@ -60,6 +54,26 @@ Add ```<WebProject>True</WebProject>``` to the web application project reference
   <WebProject>True</WebProject>
 </ProjectReference>
 ```
+
+Paste the following XML snippet inside ```<Project></Project>``` tag.
+
+```xml
+<Target Name="BeforeBuild">
+  <!-- Remove read-only attribute -->
+  <Exec Command="attrib -R %(ProjectReference.Filename).wxs" Condition="'%(ProjectReference.WebProject)'=='True'" />
+  
+  <!-- Package web application using Web Deploy (msdeploy) -->
+  <MSBuild Projects="%(ProjectReference.FullPath)" Targets="Package" Properties="Configuration=$(Configuration);Platform=$(Platform)" Condition="'%(ProjectReference.WebProject)'=='True'" />
+  <ItemGroup>
+    <LinkerBindInputPaths Include="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" />
+  </ItemGroup>
+  
+  <!-- Generate a WiX installer file using Heat Tool -->
+  <HeatDirectory OutputFile="%(ProjectReference.Filename).wxs" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="%(ProjectReference.Filename)" AutogenerateGuids="True" SuppressCom="True" SuppressFragments="True" SuppressRegistry="True" ToolPath="$(WixToolPath)"  Condition="'%(ProjectReference.WebProject)'=='True'" />
+</Target>
+```
+
+To disable Web.Config automatic connection string parameterization set MSBuild property AutoParameterizationWebConfigConnectionStrings to False.
 
 Here's a .wixproj file for example  [WebAppInstaller.wixproj](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebAppInstaller.wixproj)
 
