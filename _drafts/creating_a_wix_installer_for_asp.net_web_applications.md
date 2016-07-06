@@ -31,6 +31,17 @@ To add a new setup project in Visual Studio go to File &#10140; New &#10140; Pro
 
 ### Step 4: Web Deploy Package
 
-Open the WiX setup project file (.wixproj) using a text editor and paste the following XML inside the <Project> XML tag.
+Open the WiX setup project file (.wixproj) using any text editor and paste the following XML snippet inside ```<Project></Project>``` XML tag.
 
-{% gist AlonAmsalem/3ee098fb588da1985da2 %}
+Here's a .wixproj file for example: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebAppInstaller.wixproj
+
+```xml
+<Target Name="BeforeBuild">
+  <Exec Command="attrib -R %(ProjectReference.Filename).wxs" Condition="'%(ProjectReference.WebProject)'=='True'" />
+  <MSBuild Projects="%(ProjectReference.FullPath)" Targets="Package" Properties="Configuration=$(Configuration);Platform=AnyCPU" Condition="'%(ProjectReference.WebProject)'=='True'" />
+  <ItemGroup>
+    <LinkerBindInputPaths Include="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" />
+  </ItemGroup>
+  <HeatDirectory OutputFile="%(ProjectReference.Filename).wxs" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="%(ProjectReference.Filename)" AutogenerateGuids="True" SuppressCom="True" SuppressFragments="True" SuppressRegistry="True" ToolPath="$(WixToolPath)"  Condition="'%(ProjectReference.WebProject)'=='True'" />
+</Target>
+```
