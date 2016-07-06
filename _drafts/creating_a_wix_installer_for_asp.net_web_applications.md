@@ -20,15 +20,13 @@ To add a new setup project in Visual Studio go to File &#10140; New &#10140; Pro
 
 ![Create New WiX Project](/images/wix_aspnet_tutorial/new_wix_project.png)
 
-Add a new Installer File (.wxs)
-
-The file name should be the same as the web application name. For example: [WebApp.wxs](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebApp.wxs)
+Add a new Installer (.wxs) file . The file name should be the same as the web application name. For example: [WebApp.wxs](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebApp.wxs)
 
 ![Add Installer File](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
 
-![Add Transforms File](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
-
 ### Step 2: Add project reference
+
+Add project reference from the WiX setup project to the web application project.
 
 ![Add Reference](/images/wix_aspnet_tutorial/add_reference.png)
 
@@ -36,7 +34,7 @@ The file name should be the same as the web application name. For example: [WebA
 
 ### Step 4: Web Application Package
 
-To automatically update the installer every time the setup project builds, Open the WiX setup project file (.wixproj) using any text editor.
+To automatically update the installer every time the setup project builds, Open the WiX setup project file (.wixproj) using any text editor:
 
 Add ```<WebProject>True</WebProject>``` to the web application project reference.
 
