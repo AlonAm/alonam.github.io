@@ -28,5 +28,4 @@ File &#10140; New &#10140; Project...
 
 {% gist AlonAmsalem/3ee098fb588da1985da2 %}
 
-
 <script src="https://gist.github.com/AlonAmsalem/3ee098fb588da1985da2.js"></script>
