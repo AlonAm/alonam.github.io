@@ -10,7 +10,7 @@ In this tutorial I'm going to show you how to use WiX Toolset and Web Deploy (ms
 
 Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
-### Step 1: Add a new WiX setup project
+### Step 1: Create the WiX setup project
 
 Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/).
 
@@ -20,25 +20,23 @@ To add a new setup project in Visual Studio go to File &#10140; New &#10140; Pro
 
 ![Create New WiX Project](/images/wix_aspnet_tutorial/new_wix_project.png)
 
+Add a new Installer File (.wxs)
+
+The file name should be the same as the web application name. For example: [WebApp.wxs](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebApp.wxs)
+
+![Add Installer File](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
+
+![Add Transforms File](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
+
 ### Step 2: Add project reference
 
 ![Add Reference](/images/wix_aspnet_tutorial/add_reference.png)
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_project_reference.png)
 
-### Step 3: Add a new Installer File (.wxs)
+### Step 4: Web Application Package
 
-The .wxs file name should be the same as the web application name. For example: [WebApp.wxs](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebApp.wxs)
-
-![Add Installer File](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
-
-### Step 4: Add Transforms File
-
-Add image here...
-
-### Step 4: Package Web Application
-
-Open the WiX setup project file (.wixproj) using any text editor.
+To automatically update the installer every time the setup project builds, Open the WiX setup project file (.wixproj) using any text editor.
 
 Add ```<WebProject>True</WebProject>``` to the web application project reference.
 
@@ -72,6 +70,8 @@ Paste the following XML snippet inside ```<Project></Project>``` tag.
   <HeatDirectory OutputFile="%(ProjectReference.Filename).wxs" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="%(ProjectReference.Filename)" AutogenerateGuids="True" SuppressCom="True" SuppressFragments="True" SuppressRegistry="True" ToolPath="$(WixToolPath)"  Condition="'%(ProjectReference.WebProject)'=='True'" />
 </Target>
 ```
+
+To exclude certain files or folders from the final .wxs file, Add a new .xslt file to the setup project and set the Transforms property of ```<HeatDirectory></HeatDirectory>
 
 To disable Web.Config automatic connection string parameterization set MSBuild property AutoParameterizationWebConfigConnectionStrings to False.
 
