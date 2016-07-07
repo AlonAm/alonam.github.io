@@ -2,11 +2,14 @@
 layout: post
 title: Creating a WiX installer for ASP.NET Web Applications
 category: blog
+tags: wix
 ---
 
 Manually maintaining a Windows Installer for a large ASP.NET web application using Wix Toolset can be a very time consuming and error prone task.
 
 In this tutorial I'm going to show you how to use WiX Toolset and Web Deploy (msdeploy) to create a Windows Installer for a single ASP.NET web application.
+
+This tutorial is based on [WiX Toolset](http://wixtoolset.org/) version 3.10.3
 
 Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
@@ -14,11 +17,9 @@ Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
 Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/).
 
-This tutorial is based on version 3.10.3
-
 To add a new setup project in Visual Studio go to File &#10140; New &#10140; Project...
 
-![Create New WiX Project](/images/wix_aspnet_tutorial/new_wix_project.png)
+![Add WiX Setup Project](/images/wix_aspnet_tutorial/new_wix_project.png)
 
 Add a new Installer (.wxs) file . The file name should be the same as the web application name. For example: [WebApp.wxs](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebApp.wxs)
 
