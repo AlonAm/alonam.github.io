@@ -35,7 +35,9 @@ Add project reference from the WiX setup project to the web application project.
 
 ### Step 4: Web Application Package
 
-To automatically update the installer every time the setup project builds, Open the WiX setup project file (.wixproj) using any text editor:
+To automatically update the installer every time the setup project builds, Open the WiX setup project file (.wixproj) using any text editor.
+
+To edit the file using Visual Studio, Unload the WiX project, right-click the project name and select Edit WebApp.wxs.
 
 Add ```<WebProject>True</WebProject>``` to the web application project reference.
 
