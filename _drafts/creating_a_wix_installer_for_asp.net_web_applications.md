@@ -11,9 +11,9 @@ In this tutorial I'm going to show you how to use WiX Toolset and Web Deploy (ms
 
 This tutorial is based on [WiX Toolset](http://wixtoolset.org/) version 3.10.3
 
-Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
+Example Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
-### Step 1: Create the WiX setup project
+### Step 1: Add a WiX setup project
 
 Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/).
 
