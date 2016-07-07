@@ -13,14 +13,14 @@ Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
 ### Overview
 
-**Build
+**Build**
 
 The installer is created during the build process on the developer's workstation or a build server.
 During the build process, Visual Studio compiles the web application and all of its dependencies and creates a Web Deploy package of all necessary files and folders.
 
-Compile &#10140; Package &#10140; Harvest &#10140; Create MSI &#10140; 
+Compile &#10140; Package &#10140; Harvest &#10140; Create MSI
 
-**Installation*\
+**Installation**
 
 Install &#10140; Create Application Pool &#10140; Create Website &#10140; Start
 
