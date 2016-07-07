@@ -9,13 +9,15 @@ Manually maintaining a Windows Installer for a large ASP.NET web application usi
 
 In this tutorial I'm going to show you how to use WiX Toolset and Web Deploy (msdeploy) to create a Windows Installer for ASP.NET web applications.
 
-Example Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
+Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
 ### Overview
 
-Build &#10140; Package &#10140; Harvest &#10140; Create MSI &#10140; 
+The installer is created during the build process on the developer's workstation or a build server.
 
-Install &#10140; Create Application Pool &#10140; Create Website
+Compile &#10140; Package &#10140; Harvest &#10140; Create MSI &#10140; 
+
+Install &#10140; Create Application Pool &#10140; Create Website &#10140; Start
 
 ### Step 1: Add a WiX setup project
 
