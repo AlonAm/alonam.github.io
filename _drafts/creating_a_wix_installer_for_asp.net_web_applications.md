@@ -11,6 +11,12 @@ In this tutorial I'm going to show you how to use WiX Toolset and Web Deploy (ms
 
 Example Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
 
+### Overview
+
+Build &#10140; Package &#10140; Harvest &#10140; Create MSI &#10140; 
+
+Install &#10140; Create Application Pool &#10140; Create Website
+
 ### Step 1: Add a WiX setup project
 
 Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/).
