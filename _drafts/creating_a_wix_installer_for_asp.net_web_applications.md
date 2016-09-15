@@ -83,8 +83,6 @@ Paste the following XML snippet inside ```<Project></Project>``` tag.
 </Target>
 ```
 
-To exclude certain files or folders from the final .wxs file, Add a new .xslt file to the setup project and set the Transforms property of ```<HeatDirectory></HeatDirectory>
-
 To disable Web.Config automatic connection string parameterization set MSBuild property AutoParameterizationWebConfigConnectionStrings to False.
 
 Here's a .wixproj file for example  [WebAppInstaller.wixproj](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebAppInstaller.wixproj)
