@@ -22,9 +22,11 @@ body {
 	font-family: 'Caveat', cursive;
 }
 
+/*
 h1, h2, h3{
 	font-family: 'Caveat', cursive;
 }
+*/
 
 @media only screen and (min-width : 330px) {
 	footer nav .navbar-header {
