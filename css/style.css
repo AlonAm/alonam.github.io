@@ -19,13 +19,8 @@ body {
 .navbar-default .navbar-brand {
 	color:black;
 	font-family: 'Caveat', cursive;
+	font-size: 40px;
 }
-
-/*
-h1, h2, h3{
-	font-family: 'Caveat', cursive;
-}
-*/
 
 @media only screen and (min-width : 330px) {
 	footer nav .navbar-header {
