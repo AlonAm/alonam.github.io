@@ -5,7 +5,7 @@ category: blog
 tags: vsix, anystatus
 ---
 
-A few weeks ago, I have published a Visual Studio Extension called AnyStatus.
-Progress is going well, so I'd like to share some details, and get your feedback.
+A few weeks ago, I have published a new Visual Studio Extension called AnyStatus. Progress is going well, so I'd like to share some details, and get your feedback.
 
-The extension adds basic monitoring capabilities to Visual Studio that enable developers get a quick view of the status of their development environment.
+**AnyStatus is a Visual Studio Extension that adds basic monitoring capabilities to enable developers monitor their development environment and other resources**
+
