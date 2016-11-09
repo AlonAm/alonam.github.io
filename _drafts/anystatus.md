@@ -11,7 +11,9 @@ I've recently published a new Visual Studio extension called AnyStatus. Progress
 
 AnyStatus extension adds basic monitoring capabilities to Visual Studio.
 
-With AnyStatus you can monitor HTTP servers, send Ping requests, check TCP ports, monitor GitHub Issues, monitor CI builds on Team Foundation Server, Jenkins, TeamCity, AppVeyor...and much more. All from within Visual Studio.
+With AnyStatus you can monitor HTTP servers, send Ping requests, check TCP ports, monitor GitHub Issues, monitor CI builds on Team Foundation Server, Jenkins, TeamCity, AppVeyor and much more. All from within Visual Studio.
+
+AnyStatus runs in the background and does not have a significant impact on the performance or startup of Visual Studio. Moreover, it loads only when the tool window is activated.
 
 ## Why?
 
