@@ -5,11 +5,13 @@ category: blog
 tags: vsix, anystatus
 ---
 
-I've recently published a new Visual Studio extension. Progress is going well, so I'd like to share some details, and get your feedback.
+I've recently published a new Visual Studio extension called AnyStatus. Progress is going well, so I'd like to share some details, and get your feedback.
 
-## What?
+## What is it?
 
-AnyStatus extension adds monitoring capabilities to Visual Studio.
+AnyStatus extension adds basic monitoring capabilities to Visual Studio.
+
+With AnyStatus you can monitor HTTP servers, send Ping requests, check TCP ports, monitor GitHub Issues, monitor CI builds on Team Foundation Server, Jenkins, TeamCity, AppVeyor...and much more. All from within Visual Studio.
 
 ## Why?
 
