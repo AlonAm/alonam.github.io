@@ -5,7 +5,7 @@ category: blog
 tags: vsix, anystatus
 ---
 
-A few weeks ago, I have published a new Visual Studio Extension. Progress is going well, so I'd like to share some details, and get your feedback.
+I've recently published a new Visual Studio extension. Progress is going well, so I'd like to share some details, and get your feedback.
 
 ## What?
 
