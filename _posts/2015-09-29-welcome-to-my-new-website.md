@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Welcome to my new website
+title: Hello World
 category: blog
 ---
 Over the last week I’ve been working on a new [website](http://www.nload.io) based on [GitHub Pages](https://pages.github.com/).

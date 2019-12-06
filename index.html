@@ -1,14 +1,12 @@
 ---
 layout: default
 ---
-{% for post in site.posts %}
-	<div class="post">
-		<header class="post-header">
-			<a href="{{ post.url }}"><h1 class="post-title">{{ post.title }}</h1></a>
-			<p class="post-meta text-muted">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
-		</header>
-		<article class="post-content">
-			{{ post.content }}
-		</article>
-	</div>
-{% endfor %}
+{%- for post in site.posts -%}
+<div>
+	{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+	<h1 class="display-4">{{ post.title | escape }}</h1>
+	<p>{{ post.date | date: date_format }}</p>
+	<p>{{ post.excerpt }}</p>
+	<p><a href="{{ post.url | relative_url }}">Read More</a></p>
+</div>
+{%- endfor -%}

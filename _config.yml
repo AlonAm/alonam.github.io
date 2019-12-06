@@ -19,3 +19,4 @@ highlighter: rouge #pygments
 
 gems:
   - jekyll-sitemap
+  - jekyll-paginate

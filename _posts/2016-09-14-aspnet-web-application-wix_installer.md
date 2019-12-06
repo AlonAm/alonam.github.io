@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating a WiX installer for ASP.NET Web Applications
+title: ASP.NET Web Application WiX Installer
 category: blog
 published: true
 tags: wix

@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Introducing AnyStatus - The DevOps Assistant
+title: Introducing AnyStatus
 category: blog
+author: "Alon Amsalem"
 ---
 
-[AnyStatus](https://www.anystat.us) is a free desktop application that brings metrics and events from various sources to your desktop.
+AnyStatus is a free desktop application that brings metrics and events from various sources to your desktop.
 
 With AnyStatus you can get notifications about your CI/CD pipeline, development and testing environments, cloud services, servers and network health, database connections, HTTP servers, windows services and a lot more...event the weather in your area. AnyStatus supports Azure DevOps, Jenkins, TFS, AppVeyor, TeamCity and more.
 

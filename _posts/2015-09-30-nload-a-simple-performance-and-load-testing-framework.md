@@ -1,9 +1,11 @@
 ---
 layout: post
-title: NLoad - A simple performance and load testing framework for .NET
+title: Introducing NLoad
 category: blog
 published: true
 ---
+A simple performance and load testing framework for .NET
+
 Over the last few months I've been working on a new open-source project called [NLoad](http://www.nload.io/).
 
 NLoad is a simple performance and load testing framework for .NET used for testing Websites, WCF Services and small bits of code to identify and eliminate bottlenecks at an early stage of development.
