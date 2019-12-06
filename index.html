@@ -5,7 +5,7 @@ layout: default
 <div>
 	{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 	<h1>{{ post.title | escape }}</h1>
-	<p>{{ post.date | date: date_format }}</p>
+	<p class="text-muted">{{ post.date | date: date_format }}</p>
 	<p>{{ post.excerpt }}</p>
 	<p><a href="{{ post.url | relative_url }}">Read More</a></p>
 </div>

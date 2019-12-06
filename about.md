@@ -5,3 +5,5 @@ permalink: /about/
 ---
 
 > This page is a work in progress
+
+![](/images/profile.jpg)
