@@ -8,14 +8,13 @@ description: > # this means to ignore newlines until "baseurl:"
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 
-url: "http://www.alonam.com" # the base hostname & protocol for your site
+url: "https://www.alonam.com" # the base hostname & protocol for your site
 
 twitter_username: AlonAmsalem
 github_username: AlonAm
 
-# Build settings
 markdown: kramdown
-highlighter: rouge #pygments
+highlighter: rouge #pygments #rouge
 
 gems:
   - jekyll-sitemap

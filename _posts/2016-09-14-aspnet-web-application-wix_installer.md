@@ -3,33 +3,29 @@ layout: post
 title: ASP.NET Web Application WiX Installer
 category: blog
 published: true
-tags: wix
+tags: WiX, ASP.NET
 ---
 
-Manually maintaining a Windows Installer for a large ASP.NET web application using Wix Toolset can be a very time consuming and error prone task.
+In this tutorial I'm going to show you how to create a Windows Installer (Setup.msi or Setup.exe) for ASP.NET web applications using WiX Toolset and Web Deploy (msdeploy).
 
-In this tutorial I'm going to show you how to use WiX Toolset and Web Deploy (msdeploy) to create a Windows Installer for ASP.NET web applications.
+## Overview
 
-Source Code: https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
-
-### Overview
-
-**Build**
-
-The installer is created during the build process on the developer's workstation or a build server.
-During the build process, Visual Studio compiles the web application and all of its dependencies and creates a Web Deploy package of all necessary files and folders.
+The installer is created during build process in Visual Studio or CI/CD pipeline on your build server.
+During the build process, Visual Studio compiles the web application and all of its dependencies and creates a Web Deploy package with all of the files and folders.
 
 Compile &#10140; Package &#10140; Harvest &#10140; Create MSI
 
-**Installation**
+Installation
 
 Install &#10140; Create Application Pool &#10140; Create Website &#10140; Start
 
-### Step 1: Add a WiX setup project
-
-Before adding a new setup project, Make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/).
+## Install WiX Toolset
 
 This tutorial is based on [WiX Toolset](http://wixtoolset.org/) version 3.10.3
+
+Before adding a new setup project, make sure you installed the latest version of [WiX Toolset](http://wixtoolset.org/).
+
+## Step 1 - Add WiX setup project
 
 To add a new setup project in Visual Studio go to File &#10140; New &#10140; Project...
 
@@ -39,7 +35,7 @@ Add a new Installer (.wxs) file. The file name should be the same as the web app
 
 ![Add Installer File](/images/wix_aspnet_tutorial/add_new_wxs_file.png)
 
-### Step 2: Add project reference
+## Step 2 - Add project reference
 
 Add project reference from the WiX setup project to the web application project.
 
@@ -47,7 +43,7 @@ Add project reference from the WiX setup project to the web application project.
 
 ![Add Project Reference](/images/wix_aspnet_tutorial/add_project_reference.png)
 
-### Step 4: Pack and harvest web application
+## Step 3 - Pack and harvest web application
 
 To automatically update the installer every time the setup project builds, Open WiX setup project file (.wixproj) using any text editor (To edit the file using Visual Studio, Unload the WiX setup project, right-click the project name and select Edit WebApp.wxs).
 
@@ -88,3 +84,6 @@ To disable Web.Config automatic connection string parameterization set MSBuild p
 
 Here's a .wixproj file for example  [WebAppInstaller.wixproj](https://github.com/AlonAmsalem/WebAppWixInstallerTemplate/blob/master/WebAppInstaller/WebAppInstaller.wixproj)
 
+## Source Code
+
+https://github.com/AlonAmsalem/WebAppWixInstallerTemplate
